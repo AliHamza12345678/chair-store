@@ -337,6 +337,14 @@ model BlogPost {
   authorName  String?
   publishedAt DateTime?
 
+  category    String?
+  readingTime String?
+  views       Int        @default(0)
+  likes       Int        @default(0)
+  seoScore    Int        @default(88)
+  tags        String[]   @default([])
+  ogImage     String?
+
   createdAt   DateTime   @default(now())
   updatedAt   DateTime   @updatedAt
 
