@@ -3,6 +3,14 @@ import { prisma } from "@/lib/prisma"
 /** Admin: list all coupons, newest first. */
 export async function getCoupons() {
   return prisma.coupon.findMany({
+    include: {
+      orders: {
+        select: {
+          discount: true,
+          total: true
+        }
+      }
+    },
     orderBy: { createdAt: "desc" },
   })
 }
