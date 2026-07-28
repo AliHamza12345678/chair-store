@@ -1,0 +1,43 @@
+name: CI Pipeline
+
+on:
+  push:
+    branches: ["main"]
+  pull_request:
+    branches: ["main"]
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'npm'
+
+      - name: Install Dependencies
+        run: npm ci
+
+      - name: Generate Prisma Client
+        run: npx prisma generate
+
+      - name: Run Linter
+        run: npm run lint
+        continue-on-error: true # Warning only for now
+
+      - name: Run Tests
+        run: npx vitest run
+
+      - name: Build Project
+        run: npm run build
+        env:
+          NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME: "test"
+          NEXT_PUBLIC_CLOUDINARY_UPLOAD_PRESET: "test"
+          # Prisma requires DATABASE_URL during build phase for static generation if you fetch data at build time
+          # For a strict CI, you'd mock this or use a shadow DB. 
+          # For Next.js, we can bypass static data fetching failures via standalone build or ignoring errors.

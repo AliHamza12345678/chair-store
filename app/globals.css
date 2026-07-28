@@ -1,0 +1,349 @@
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&display=swap");
+@import "tailwindcss";
+
+@theme {
+  --color-background: hsl(0 0% 100%);
+  --color-foreground: hsl(0 0% 3.9%);
+  --color-primary: hsl(240 5.9% 10%);
+  --color-primary-foreground: hsl(0 0% 98%);
+  --color-secondary: hsl(240 4.8% 95.9%);
+  --color-secondary-foreground: hsl(240 5.9% 10%);
+  --color-accent: hsl(240 4.8% 95.9%);
+  --color-accent-foreground: hsl(240 5.9% 10%);
+  --color-muted: hsl(240 4.8% 95.9%);
+  --color-muted-foreground: hsl(240 3.8% 46.1%);
+  --color-border: hsl(240 5.9% 90%);
+  --radius: 0.5rem;
+  --font-inter: 'Inter', sans-serif;
+}
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 0 0% 3.9%;
+    --primary: 240 5.9% 10%;
+    --primary-foreground: 0 0% 98%;
+    --secondary: 240 4.8% 95.9%;
+    --secondary-foreground: 240 5.9% 10%;
+    --accent: 240 4.8% 95.9%;
+    --accent-foreground: 240 5.9% 10%;
+    --muted: 240 4.8% 95.9%;
+    --muted-foreground: 240 3.8% 46.1%;
+    --border: 240 5.9% 90%;
+    --radius: 0.5rem;
+    --font-inter: 'Inter', sans-serif;
+
+    /* ── Lumina Theme System (Light Mode) ─────────────────────── */
+    /* Surface colors */
+    --lm-surface-primary: #FAFAF8;
+    --lm-surface-secondary: #F5F3EF;
+    --lm-surface-elevated: #FFFFFF;
+    --lm-surface-hover: rgba(0, 0, 0, 0.03);
+    --lm-surface-active: rgba(0, 0, 0, 0.06);
+    --lm-surface-inset: #F0EDE7;
+
+    /* Navigation */
+    --lm-nav-bg: rgba(250, 250, 248, 0.80);
+    --lm-nav-border: rgba(0, 0, 0, 0.06);
+    --lm-mobile-menu-bg: rgba(250, 250, 248, 0.97);
+
+    /* Text colors */
+    --lm-text-primary: #1A1A1A;
+    --lm-text-secondary: #4A4A4A;
+    --lm-text-muted: #8A8A8A;
+    --lm-text-on-accent: #000000;
+
+    /* Accent / Gold */
+    --lm-accent-primary: #B8860B;
+    --lm-accent-text: #92600A;
+    --lm-accent-hover: #A07209;
+    --lm-accent-muted: rgba(184, 134, 11, 0.10);
+    --lm-accent-border: rgba(184, 134, 11, 0.30);
+    --lm-accent-glow: rgba(184, 134, 11, 0.10);
+    --lm-accent-badge: #B8860B;
+
+    /* Borders */
+    --lm-border-default: rgba(0, 0, 0, 0.08);
+    --lm-border-subtle: rgba(0, 0, 0, 0.04);
+    --lm-border-strong: rgba(0, 0, 0, 0.15);
+
+    /* Overlays */
+    --lm-overlay: rgba(0, 0, 0, 0.45);
+    --lm-overlay-light: rgba(0, 0, 0, 0.25);
+
+    /* Skeleton shimmer */
+    --lm-skeleton-base: #EDEBE6;
+    --lm-skeleton-shimmer-1: rgba(0, 0, 0, 0.02);
+    --lm-skeleton-shimmer-2: rgba(0, 0, 0, 0.05);
+
+    /* Scrollbar */
+    --lm-scrollbar-track: #F5F3EF;
+    --lm-scrollbar-thumb: #D4D0C8;
+
+    /* Footer */
+    --lm-footer-bg: #1A1A1A;
+    --lm-footer-text: #E5E5E5;
+    --lm-footer-text-muted: #A3A3A3;
+    --lm-footer-border: rgba(255, 255, 255, 0.08);
+  }
+
+  .dark {
+    --background: 240 10% 3.9%;
+    --foreground: 0 0% 98%;
+    --primary: 0 0% 98%;
+    --primary-foreground: 240 5.9% 10%;
+    --secondary: 240 3.7% 15.9%;
+    --secondary-foreground: 0 0% 98%;
+    --accent: 240 3.7% 15.9%;
+    --accent-foreground: 0 0% 98%;
+    --muted: 240 3.7% 15.9%;
+    --muted-foreground: 240 5% 64.9%;
+    --border: 240 3.7% 15.9%;
+
+    /* ── Lumina Theme System (Dark Mode) ──────────────────────── */
+    /* Surface colors */
+    --lm-surface-primary: #080808;
+    --lm-surface-secondary: #0e0d0b;
+    --lm-surface-elevated: #060606;
+    --lm-surface-hover: rgba(255, 255, 255, 0.03);
+    --lm-surface-active: rgba(255, 255, 255, 0.08);
+    --lm-surface-inset: #0a0a09;
+
+    /* Navigation */
+    --lm-nav-bg: rgba(10, 10, 10, 0.80);
+    --lm-nav-border: rgba(255, 255, 255, 0.04);
+    --lm-mobile-menu-bg: rgba(10, 10, 10, 0.96);
+
+    /* Text colors */
+    --lm-text-primary: #FFFFFF;
+    --lm-text-secondary: #A3A3A3;
+    --lm-text-muted: #525252;
+    --lm-text-on-accent: #000000;
+
+    /* Accent / Amber */
+    --lm-accent-primary: #FBBF24;
+    --lm-accent-text: #FCD34D;
+    --lm-accent-hover: #FDE68A;
+    --lm-accent-muted: rgba(251, 191, 36, 0.10);
+    --lm-accent-border: rgba(251, 191, 36, 0.30);
+    --lm-accent-glow: rgba(251, 191, 36, 0.10);
+    --lm-accent-badge: #FBBF24;
+
+    /* Borders */
+    --lm-border-default: rgba(255, 255, 255, 0.08);
+    --lm-border-subtle: rgba(255, 255, 255, 0.04);
+    --lm-border-strong: rgba(255, 255, 255, 0.15);
+
+    /* Overlays */
+    --lm-overlay: rgba(0, 0, 0, 0.60);
+    --lm-overlay-light: rgba(0, 0, 0, 0.40);
+
+    /* Skeleton shimmer */
+    --lm-skeleton-base: rgb(20, 20, 20);
+    --lm-skeleton-shimmer-1: rgba(40, 30, 10, 0.25);
+    --lm-skeleton-shimmer-2: rgba(180, 140, 60, 0.06);
+
+    /* Scrollbar */
+    --lm-scrollbar-track: #0e0d0b;
+    --lm-scrollbar-thumb: #2a2a2a;
+
+    /* Footer */
+    --lm-footer-bg: #040404;
+    --lm-footer-text: #FFFFFF;
+    --lm-footer-text-muted: #A3A3A3;
+    --lm-footer-border: rgba(255, 255, 255, 0.08);
+  }
+
+  * {
+    border-color: hsl(var(--border));
+  }
+
+  body {
+    background-color: hsl(var(--background));
+    color: hsl(var(--foreground));
+    font-family: var(--font-inter);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  ::selection {
+    background-color: hsl(var(--primary));
+    color: hsl(var(--primary-foreground));
+  }
+}
+
+.glass {
+  background-color: hsl(var(--background) / 0.7);
+  backdrop-filter: blur(12px);
+  border: 1px solid;
+  border-color: rgb(255 255 255 / 0.2);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+.dark .glass {
+  background-color: hsl(var(--background) / 0.5);
+  border-color: rgb(255 255 255 / 0.1);
+}
+
+/* ── Skeleton shimmer ──────────────────────────────────────── */
+@keyframes skeleton-wave {
+  0%   { transform: translateX(-100%); }
+  100% { transform: translateX(200%); }
+}
+
+.skeleton-shimmer {
+  position: relative;
+  background-color: var(--lm-skeleton-base);
+  overflow: hidden;
+}
+
+.skeleton-shimmer::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    var(--lm-skeleton-shimmer-1) 40%,
+    var(--lm-skeleton-shimmer-2) 50%,
+    var(--lm-skeleton-shimmer-1) 60%,
+    transparent 100%
+  );
+  animation: skeleton-wave 2s ease-in-out infinite;
+}
+
+/* ── Product card entrance ──────────────────────────────────── */
+@keyframes product-in {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-in {
+  animation: product-in 0.55s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+
+/* ── Toolbar pulse dots ─────────────────────────────────────── */
+@keyframes toolbar-pulse {
+  0%, 100% { opacity: 0.2; transform: scale(0.8); }
+  50%       { opacity: 1;   transform: scale(1.2); }
+}
+
+/* ── Mobile filter drawer transition ────────────────────────── */
+@keyframes slide-in-left {
+  from { transform: translateX(-100%); }
+  to   { transform: translateX(0); }
+}
+
+.slide-in-left {
+  animation: slide-in-left 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+
+/* ── Theme transition ───────────────────────────────────────── */
+html {
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* ── Apple-Level Luxury Animations & Utilities ──────────────── */
+@keyframes shimmer-sweep {
+  0% { transform: translateX(-100%) rotate(25deg); }
+  100% { transform: translateX(200%) rotate(25deg); }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { opacity: 0.3; transform: scale(1); }
+  50% { opacity: 0.7; transform: scale(1.05); }
+}
+
+@keyframes scale-spring {
+  0% { transform: scale(0.95); opacity: 0; }
+  60% { transform: scale(1.02); opacity: 1; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+@keyframes float-subtle {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-4px); }
+}
+
+@keyframes progress-ring-draw {
+  from { stroke-dashoffset: 226; }
+  to { stroke-dashoffset: var(--ring-target, 0); }
+}
+
+.animate-shimmer-sweep::after {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.08) 45%,
+    rgba(255, 255, 255, 0.2) 50%,
+    rgba(255, 255, 255, 0.08) 55%,
+    transparent 100%
+  );
+  transform: rotate(25deg);
+  animation: shimmer-sweep 3s ease-in-out infinite;
+  pointer-events: none;
+}
+
+.animate-scale-spring {
+  animation: scale-spring 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+
+.animate-float {
+  animation: float-subtle 4s ease-in-out infinite;
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.65);
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+.dark .glass-card {
+  background: rgba(18, 18, 20, 0.65);
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.glass-pill {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.dark .glass-pill {
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Custom smooth scrollbar for tree & drawer */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: var(--lm-border-strong);
+  border-radius: 9999px;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: var(--lm-accent-primary);
+}
