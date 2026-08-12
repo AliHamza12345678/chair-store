@@ -2,7 +2,19 @@
 
 import Link from "next/link"
 import { usePathname } from "next/navigation"
-import { LayoutDashboard, Package, Tags, ShoppingCart, Users, Settings, Ticket, Star, CreditCard, Newspaper , ExternalLink } from "lucide-react"
+import {
+  LayoutDashboard,
+  Package,
+  Tags,
+  ShoppingCart,
+  Users,
+  Settings,
+  Ticket,
+  Star,
+  CreditCard,
+  Newspaper,
+  ExternalLink,
+} from "lucide-react"
 import { cn } from "@/lib/clsx"
 
 const routes = [
@@ -24,21 +36,29 @@ export function Sidebar() {
   return (
     <aside className="w-64 border-r bg-background/50 backdrop-blur-xl hidden md:flex flex-col h-full">
       <div className="h-16 flex items-center px-6 border-b">
-        <Link href="/admin/dashboard" className="text-xl font-bold tracking-tighter">
-          LUMINA <span className="font-light text-muted-foreground">Admin</span>
+        <Link
+          href="/admin/dashboard"
+          className="text-xl font-bold tracking-tighter"
+        >
+          LUMINA{" "}
+          <span className="font-light text-muted-foreground">
+            Admin
+          </span>
         </Link>
       </div>
+
       <nav className="flex-1 px-4 py-6 space-y-2 overflow-y-auto">
         {routes.map((route) => {
           const isActive = pathname.startsWith(route.path)
+
           return (
             <Link
               key={route.path}
               href={route.path}
               className={cn(
                 "flex items-center gap-3 px-3 py-2 rounded-md text-sm font-medium transition-colors",
-                isActive 
-                  ? "bg-primary text-primary-foreground" 
+                isActive
+                  ? "bg-primary text-primary-foreground"
                   : "text-muted-foreground hover:bg-secondary hover:text-secondary-foreground"
               )}
             >
@@ -47,22 +67,23 @@ export function Sidebar() {
             </Link>
           )
         })}
+
         <a
-  href="https://financevault-rosy.vercel.app/"
-  target="_blank"
-  rel="noopener noreferrer"
-  className="mt-6 pt-4 border-t flex items-center justify-between gap-3 px-3 py-3 rounded-lg text-sm font-medium text-muted-foreground hover:text-foreground hover:bg-secondary/70 transition-all duration-200 group"
->
-  <span className="flex items-center gap-3">
-    <span className="flex items-center justify-center w-8 h-8 rounded-md bg-secondary group-hover:bg-background transition-colors">
-      <ExternalLink className="w-4 h-4" />
-    </span>
+          href="https://financevault-rosy.vercel.app/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="mt-6 pt-4 border-t flex items-center justify-between gap-3 px-3 py-3 rounded-lg text-sm font-medium text-muted-foreground hover:text-foreground hover:bg-secondary/70 transition-all duration-200 group"
+        >
+          <span className="flex items-center gap-3">
+            <span className="flex items-center justify-center w-8 h-8 rounded-md bg-secondary group-hover:bg-background transition-colors">
+              <ExternalLink className="w-4 h-4" />
+            </span>
 
-    <span>Finance Vault</span>
-  </span>
+            <span>Finance Vault</span>
+          </span>
 
-  <ExternalLink className="w-3.5 h-3.5 opacity-50 group-hover:opacity-100 transition-opacity" />
-</a>
+          <ExternalLink className="w-3.5 h-3.5 opacity-50 group-hover:opacity-100 transition-opacity" />
+        </a>
       </nav>
     </aside>
   )
