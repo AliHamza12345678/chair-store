@@ -16,6 +16,7 @@ const routes = [
   { name: "Installments", path: "/admin/installments", icon: CreditCard },
   { name: "Blog", path: "/admin/blog", icon: Newspaper },
   { name: "Settings", path: "/admin/settings", icon: Settings },
+  { name: "Finance Vault", path: "/admin/settings", icon: Settings }
 ]
 
 export function Sidebar() {
