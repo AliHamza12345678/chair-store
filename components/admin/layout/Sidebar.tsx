@@ -2,7 +2,7 @@
 
 import Link from "next/link"
 import { usePathname } from "next/navigation"
-import { LayoutDashboard, Package, Tags, ShoppingCart, Users, Settings, Ticket, Star, CreditCard, Newspaper } from "lucide-react"
+import { LayoutDashboard, Package, Tags, ShoppingCart, Users, Settings, Ticket, Star, CreditCard, Newspaper , ExternalLink } from "lucide-react"
 import { cn } from "@/lib/clsx"
 
 const routes = [
