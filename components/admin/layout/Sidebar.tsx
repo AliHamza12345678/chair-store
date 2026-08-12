@@ -51,9 +51,17 @@ export function Sidebar() {
   href="https://financevault-rosy.vercel.app/"
   target="_blank"
   rel="noopener noreferrer"
-  className="flex items-center gap-3 px-3 py-2 rounded-md text-sm font-medium text-muted-foreground transition-colors hover:bg-secondary hover:text-secondary-foreground"
+  className="mt-6 pt-4 border-t flex items-center justify-between gap-3 px-3 py-3 rounded-lg text-sm font-medium text-muted-foreground hover:text-foreground hover:bg-secondary/70 transition-all duration-200 group"
 >
-  Finance Vault
+  <span className="flex items-center gap-3">
+    <span className="flex items-center justify-center w-8 h-8 rounded-md bg-secondary group-hover:bg-background transition-colors">
+      <ExternalLink className="w-4 h-4" />
+    </span>
+
+    <span>Finance Vault</span>
+  </span>
+
+  <ExternalLink className="w-3.5 h-3.5 opacity-50 group-hover:opacity-100 transition-opacity" />
 </a>
       </nav>
     </aside>
