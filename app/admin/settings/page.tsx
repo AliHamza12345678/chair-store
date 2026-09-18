@@ -1,0 +1,10 @@
+import { prisma } from "@/lib/prisma"
+import { SettingsClient } from "./SettingsClient"
+
+export default async function SettingsPage() {
+  const settings = await prisma.storeSettings.findUnique({
+    where: { id: "global" }
+  })
+
+  return <SettingsClient settings={settings} />
+}
